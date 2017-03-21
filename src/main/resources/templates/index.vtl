@@ -1,0 +1,21 @@
+<!--index.vtl-->
+<h1>Oh The Places You'll Go</h1>
+#if ($places)
+  <ul>
+    #foreach ($place in $places)
+      <li>$place.getDestination()</li>
+      #end
+  </ul>
+#else
+    <p>No destinations!</p>
+#end
+
+<p>Add a destination:</p>
+
+<form action="/place" method="post">
+  <label for="place">Enter a destination</label>
+  <input id="place" name="place" type="text">
+
+  <button type="submit" class="btn btn-default">Add destination</button>
+</form>
+<!--index.vtl-->
